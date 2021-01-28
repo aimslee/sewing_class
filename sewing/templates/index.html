@@ -96,17 +96,18 @@
                         {% csrf_token %}
                         <h3 class="sign_up">Sign Up for Class</h3>
                           <div class="form-group">
-                            <label for="validationDefault01">First name</label>
-                            <input type="text" name="first_name" class="form-control" id="validationDefault01" required>
-                          </div>
-                          <div class="form-group">
-                            <label for="validationDefault02">Last name</label>
-                            <input type="text" name="last_name" class="form-control" id="validationDefault02" required>
+                            <label for="validationDefault01">Full Name</label>
+                            <input type="text" name="full_name" class="form-control" id="validationDefault01" required>
                           </div>
                           <div class="form-group">
                             <label for="validationDefault02">E-mail</label>
                             <input type="text" name="email" class="form-control" id="validationDefault02" required>
                           </div>
+                          <div class="form-group">
+                            <label for="validationDefault02">Password</label>
+                            <input type="password" name="password" class="form-control" id="validationDefault02" required>
+                          </div>
+                          <a href="{% url 'register'%}">Click here to register.</a>
                           <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">I have looked at the Curriculum and About page.</label>

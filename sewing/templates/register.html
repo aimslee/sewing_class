@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        <style>
+        .flex-child {
+            flex: 1;
+        }
+        .mybox2 {
+            width: 600px;
+            padding: 20px;
+            padding-top: 30px;
+            padding-left: 100px;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col flex-child">
+            <div class="mybox2">
+                <form action="/handle_registration" method="post">
+                    {% csrf_token %}
+                    <h3 class="sign_up">Register for Class</h3>
+                      <div class="form-group">
+                        <label for="validationDefault01">Full Name</label>
+                        <input type="text" name="full_name" class="form-control" id="validationDefault01" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="validationDefault02">E-mail</label>
+                        <input type="text" name="email" class="form-control" id="validationDefault02" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="validationDefault02">Password</label>
+                        <input type="password" name="password" class="form-control" id="validationDefault02" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="validationDefault02">Confirm Password</label>
+                        <input type="password" name="confirm_password" class="form-control" id="validationDefault02" required>
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">I have looked at the Curriculum and About page.</label>
+                      </div>
+                      <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
