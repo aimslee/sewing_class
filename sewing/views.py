@@ -28,7 +28,6 @@ def handle_registration(request):
             for error in errors:
                 messages.error(request, errors[error])
             return redirect ('/register')
-        #codingdojo 46:49
     
         hashed_password = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt(8)).decode()
         new_user = User.objects.create(username = request.POST['username'], password = hashed_password)
@@ -39,10 +38,14 @@ def handle_registration(request):
 
 
 def handle_login(request):
-    print(request.POST)
-    password = request.POST['password']
-    # pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
-    # print(pw_hash)
-    # User.objects.create(username=request.POST['username'], password=pw_hash)
-    return redirect('pay_page')
+    if request.method == 'POST':
+        user_filtered_list = User.objects.filter(username = request.POST['username'])
+        if len(user_filtered_list):
+            existing_user = user_filtered_list[0] 
+            if bcrypt.checkpw(request.POST['password'].encode(), existing_user.password.encode()):
+                return redirect('/secure')
+        messages.error(request, 'Please enter a valid username and password')
+        return redirect('/')
+    return redirect('/')
+
 # Create your views here.
