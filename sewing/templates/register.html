@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Roboto Slab font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
     <style>
         <style>
         .flex-container {
@@ -23,10 +27,42 @@
             margin-right: auto;
             margin-top: 180px; 
         }
+.green-bar {
+  list-style-type: none;
+  display: block;
+  height: 52px;
+  width: 100%;
+  /* margin: 0;
+  padding: 0; */
+  overflow: hidden;
+  background-color: #004E4E;
+}
+
+        .bottom_frame {
+          margin-top: 0px;
+          margin-top: 95px;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: -10px; 
+        }
+        .bottom_strip {
+          background-color: #d2b48c;
+          margin-top: -10px; 
+          height: 100px;
+          display: block;
+          width: 1888px;
+          overflow: hidden;
+        }
     </style>
     </style>
 </head>
 <body>
+  <!-- <ul>
+    <li><a class="active" href="#home">Main</a></li>
+    <li><a href="{% url 'register' %}">Register</a></li>
+  </ul> -->
+  <div class="green-bar">
+  </div>
   <div class="flex-container">
     <div class="row">
         <div class="col flex-child">
@@ -50,10 +86,10 @@
                         <label for="validationDefault02">Confirm Password</label>
                         <input type="password" name="confirm_password" class="form-control" id="validationDefault02" required>
                       </div>
-                      <div class="form-group form-check">
+                      <!-- <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">I have looked at the Curriculum and About page.</label>
-                      </div>
+                      </div> -->
                       {% if messages %}
                         <ul>
                           {% for error_message in messages %}
@@ -67,6 +103,11 @@
             </div>
         </div>
     </div>
+  </div>
+  <div class="bottom_frame">
+    <img src="{% static 'img/double_bottomed_frame.png' %}" width= 100% alt="Trulli">
+  </div>
+  <div class="bottom_strip">
   </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
